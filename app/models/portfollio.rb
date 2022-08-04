@@ -1,0 +1,2 @@
+class Portfollio < ApplicationRecord
+end
