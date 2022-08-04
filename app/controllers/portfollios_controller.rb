@@ -36,7 +36,12 @@ class PortfolliosController < ApplicationController
             format.html { render :edit, status: :unprocessable_entity }
             
           end
-        end
+        end   
+    end
+
+    def show
+        
+        @portfolio_item = Portfollio.find(params[:id])
     end
 
 
