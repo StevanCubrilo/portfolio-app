@@ -8,4 +8,6 @@
     <p><%= portfolio_item.body %></p>
     <%= image_tag portfolio_item.thumb_image if !portfolio_item.thumb_image.nil? %>
      <%= link_to "Edit", edit_portfollio_path(portfolio_item.id) %>
+     <%= button_to "Delete Portfolio Item", portfollio_path(portfolio_item), method: :delete, data: {confirm: 'Are you sure?'} %>
+     <%= button_to "Delete my account", portfollio_path(portfolio_item), form: { data: { turbo_confirm: "Are you sure?" } }, method: :delete %>
 <% end %>
