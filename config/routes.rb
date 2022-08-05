@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
-  resources :portfollios
-  get 'pages/home'
-  get 'pages/about'
-  get 'pages/contact'
-  resources :blogs
+  root "pages#home"
+  resources :portfollios, except: [:show]
+  get 'portfollio/:id', to: 'portfollios#show', as: 'portfollio_show'
+
+  get "about-me", to: "pages#about"
+  get "contact", to: "pages#contact"
+ 
+  
+  resources :blogs do 
+    member do
+      get :toggle_status
+    end
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
