@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "pages#home"
-  resources :portfollios
+  resources :portfollios, except: [:show]
+  get 'portfollio/:id', to: 'portfollios#show', as: 'portfollio_show'
+
   get "about-me", to: "pages#about"
   get "contact", to: "pages#contact"
  
