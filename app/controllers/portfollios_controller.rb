@@ -3,12 +3,17 @@ class PortfolliosController < ApplicationController
         @portfolio_items = Portfollio.all
     end
 
+    def angular
+        @angular_portfolio_items = Portfollio.angular
+    end
+
     def new
         @portfolio_item = Portfollio.new
+        3.times { @portfolio_item.technologies.build }
     end
 
     def create
-        @portfolio_item = Portfollio.new(params.require(:portfollio).permit(:title, :subtitle, :body))
+        @portfolio_item = Portfollio.new(params.require(:portfollio).permit(:title, :subtitle, :body, technologies_attributes: [:name]))
     
         respond_to do |format|
          if @portfolio_item.save
