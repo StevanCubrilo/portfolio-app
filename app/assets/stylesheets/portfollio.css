@@ -1,3 +1,7 @@
 body {
     background-color: greenyellow;
 }
+
+.top a {
+    color:red;
+}
