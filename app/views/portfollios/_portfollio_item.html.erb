@@ -1,0 +1,7 @@
+<p><%= link_to portfollio_item.title, portfollio_show_path(portfollio_item.id) %></p>
+<p><%= portfollio_item.subtitle %></p>
+<p><%= portfollio_item.body %></p>
+<%= image_tag portfollio_item.thumb_image if !portfollio_item.thumb_image.nil? %>
+<%= link_to "Edit", edit_portfollio_path(portfollio_item.id) %>
+<%= button_to "Delete Portfolio Item", portfollio_path(portfollio_item), method: :delete, data: {confirm: 'Are you sure?'} %>
+<%= button_to "Delete my account", portfollio_path(portfollio_item), form: { data: { turbo_confirm: "Are you sure?" } }, method: :delete %>
