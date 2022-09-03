@@ -67,3 +67,5 @@ end
 gem 'friendly_id', '~> 5.4.0'
 
 gem 'devise', '~> 4.8', '>= 4.8.1'
+
+gem 'petergate', '~> 3.0'
